@@ -13,12 +13,22 @@ class Streamingservice {
   +RemoveMovie(User user, Movie movie):void
   +savelogininfo(User user):void
 }
-
+package " "{
 class User {
     -String username
     -String password
     +watchedMovies: List<Movie>
     +savedMovies:List<Movie>
+}
+
+abstract class Media{
+- String title
+- String category
+-int Rating
+}
+
+class Movie {
+-int year
 }
 
 class Series {
@@ -35,15 +45,12 @@ class Season {
 class Episode {
 -int length
 }
-
-
-class Fileio {
 }
 
-abstract class Media{
-- String title
-- String category
--int Rating
+package "utility"{
+class Fileio {
++ArrayList<String> readMovieData(String path)
++ public void saveMovieData(ArrayList<Movie> movies)
 }
 
 class TextUI {
@@ -54,28 +61,21 @@ class TextUI {
 +DisplaySavedseries(User user): List<Series>
 }
 
-class Movie {
--int year
-}
-
 interface Filebase{
-+ArrayList<String> readMovieData(String path)
-+ public void saveMovieData(ArrayList<Movie> movies)
++ArrayList<String> readMovieData
++ public saveMovieData(ArrayList<Movie> movies)
 }
 
-
+}
 
 Streamingservice *-- Filebase
 Streamingservice o--  TextUI
 Streamingservice o-- User
 Streamingservice *-- Media
-Filebase o-- Fileio
+Filebase *-- Fileio
 Media *-- Series
 Media *-- Movie
 Series *-- Season
 Episode --* Season
-
-
-
 
 @enduml
