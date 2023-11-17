@@ -1,0 +1,149 @@
+@startuml
+!pragma layout smetana
+
+class Streamingservice {
+  +users: List<user>
+  + movies: List<Movie>
+  + series : List<Series>
+  +displaystartmenu(): void
+  +displayMainMenu(User user): void
+  +Searchmovie(String Title): Movie
+  + Searchmoviefromcategory(String category): Movie
+  +playmovie(String movie) void
+  +RemoveMovie(User user, Movie movie):void
+  +savelogininfo(User user):void
+}
+
+class User {
+    -String username
+    -String password
+    +watchedMovies: List<Movie>
+    +savedMovies:List<Movie>
+}
+
+class Series {
+    -String title
+    -String category
+    -int ReleaseYear
+    -int Rating
+    -int Seasons
+}
+
+class Season {
+    -Int seasonNumber
+    -int Episodes
+}
+
+class Episode {
+-int length
+}
+
+
+class Fileio {
++ArrayList<String> readMovieData(String path)
++ public void saveMovieData(ArrayList<Movie> movies)
+}
+
+class TextUI {
++ void Displaymessage(String msg)
++DisplayWatchedmovie(User user): List<Movie>
+ +DisplaySavedmovie(User user): List<Movie>
+ +DisplayWatchedseries(Series series) List<Series>
++DisplaySavedseries(User user): List<Series>
+}
+
+class Movie {
+-String title
+-String category
+-int ReleaseYear
+-int rating
+}
+
+
+
+Streamingservice -- Fileio
+Streamingservice -- TextUI
+Streamingservice --> User
+Streamingservice --> Movie
+Streamingservice --> Series
+User --> Series
+User --> Movie
+Series--> Season
+Season --> Episode
+
+@enduml
+
+@startuml
+!pragma layout smetana
+
+class Streamingservice {
+  +users: List<user>
+  + movies: List<Movie>
+  + series : List<Series>
+  +displaystartmenu(): void
+  +displayMainMenu(User user): void
+  +Searchmovie(String Title): Movie
+  + Searchmoviefromcategory(String category): Movie
+  +playmovie(String movie) void
+  +RemoveMovie(User user, Movie movie):void
+  +savelogininfo(User user):void
+}
+
+class User {
+    -String username
+    -String password
+    +watchedMovies: List<Movie>
+    +savedMovies:List<Movie>
+}
+
+class Series {
+    -String title
+    -String category
+    -int ReleaseYear
+    -int Rating
+    -int Seasons
+}
+
+class Season {
+    -Int seasonNumber
+    -int Episodes
+}
+
+class Episode {
+-int length
+}
+
+
+class Fileio {
++ArrayList<String> readMovieData(String path)
++ public void saveMovieData(ArrayList<Movie> movies)
+}
+
+class TextUI {
++ void Displaymessage(String msg)
++DisplayWatchedmovie(User user): List<Movie>
+ +DisplaySavedmovie(User user): List<Movie>
+ +DisplayWatchedseries(Series series) List<Series>
++DisplaySavedseries(User user): List<Series>
+}
+
+class Movie {
+-String title
+-String category
+-int ReleaseYear
+-int rating
+}
+
+
+
+Streamingservice -- Fileio
+Streamingservice -- TextUI
+Streamingservice --> User
+Streamingservice --> Movie
+Streamingservice --> Series
+User --> Series
+User --> Movie
+Series--> Season
+Season --> Episode
+
+@enduml
