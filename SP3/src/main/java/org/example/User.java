@@ -8,34 +8,59 @@ public class User {
     private String userName;
     private String passWord;
 
-    private  List<Media> watchLaterList;
-    private List<Media> watchedList;
+    private  List<Movie> watchMovieLaterList;
+    private List<Movie> watchedMovieList;
+
+    private  List<Serie> watchSerieLaterList;
+    private List<Serie> watchedSerieList;
+
 
 
     public User(String userName, String passWord){
         this.userName = userName;
         this.passWord = passWord;
-        this.watchedList = new ArrayList<>();
-        this.watchLaterList = new ArrayList<>();
+        this.watchedMovieList = new ArrayList<>();
+        this.watchMovieLaterList = new ArrayList<>();
 
     }
 
     //metode til at adde et medie til WatchLaterList
+    // Skal
 
-    public void addToWatchLaterList(Media media){
-        watchLaterList.add(media);
+    public void addToWatchLaterList(Movie movie){
+        watchMovieLaterList.add(movie);
         System.out.println("Media has been added to your watch later list");
     }
 
     //metode til at adde et medie til watchedList
-    public void addToWatchedList(Media media){
-        watchedList.add(media);
+    public void addToWatchedMovieList(Movie movie){
+        watchedMovieList.add(movie);
         System.out.println("Media has been added to your watched list");
     }
 
     //metode til at fjerne et medie fra watchLaterList
-    public void removeFromToWatchLaterList(Media media){
-        if(watchLaterList.remove(media)){
+    public void removeFromToWatchMovieLaterList(Movie movie){
+        if(watchMovieLaterList.remove(movie)){
+            System.out.println("Media has been removed from your watch later list");
+        } else {
+            System.out.println("Media not found in your watch later list");
+        }
+    }
+
+    public void addToWatchSerieLaterList(Serie Serie){
+        watchSerieLaterList.add(serie);
+        System.out.println("Media has been added to your watch later list");
+    }
+
+    //metode til at adde et medie til watchedList
+    public void addToWatchedSeriesList(Serie serie){
+        watchedSerieList.add(serie);
+        System.out.println("Media has been added to your watched list");
+    }
+
+    //metode til at fjerne et medie fra watchLaterList
+    public void removeFromToWatchSerieLaterList(Serie serie){
+        if(watchSerieLaterList.remove(serie)){
             System.out.println("Media has been removed from your watch later list");
         } else {
             System.out.println("Media not found in your watch later list");
@@ -43,19 +68,7 @@ public class User {
     }
 
     // til at display watchLaterList
-    public void displayWatchLaterList(){
-        System.out.println("watch media later list:");
-        for(Media k: watchLaterList){
-            System.out.println("- " + k.getTitle());
-        }
-    }
-    // til at display watchedList
-    public void displayWatchedList(){
-        System.out.println("watched media list:");
-        for(Media k: watchedList){
-            System.out.println("- " + k.getTitle());
-        }
-    }
+
 
     public String getUserName() {
         return userName;

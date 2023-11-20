@@ -1,0 +1,81 @@
+  @startuml
+!pragma layout smetana
+
+class Streamingservice {
+  +users: List<user>
+  + movies: List<Movie>
+  + series : List<Series>
+  +displaystartmenu(): void
+  +displayMainMenu(User user): void
+  +Searchmovie(String Title): Movie
+  + Searchmoviefromcategory(String category): Movie
+  +playmovie(String movie) void
+  +RemoveMovie(User user, Movie movie):void
+  +savelogininfo(User user):void
+}
+package " "{
+class User {
+    -String username
+    -String password
+    +watchedMovies: List<Movie>
+    +savedMovies:List<Movie>
+}
+
+abstract class Media{
+- String title
+- String category
+-int Rating
+}
+
+class Movie {
+-int year
+}
+
+class Series {
+    -int Seasons
+    -int startyear
+    -int endyear
+}
+
+class Season {
+    -Int seasonNumber
+    -int Episodes
+}
+
+class Episode {
+-int length
+}
+}
+
+package "utility"{
+class Fileio {
++ArrayList<String> readMovieData(String path)
++ public void saveMovieData(ArrayList<Movie> movies)
+}
+
+class TextUI {
++ void Displaymessage(String msg)
++DisplayWatchedmovie(User user): List<Movie>
+ +DisplaySavedmovie(User user): List<Movie>
+ +DisplayWatchedseries(Series series) List<Series>
++DisplaySavedseries(User user): List<Series>
+}
+
+interface Filebase{
++ArrayList<String> readMovieData
++ public saveMovieData(ArrayList<Movie> movies)
+}
+
+}
+
+Streamingservice *-- Filebase
+Streamingservice o--  TextUI
+Streamingservice o-- User
+Streamingservice *-- Media
+Filebase *-- Fileio
+Media *-- Series
+Media *-- Movie
+Series *-- Season
+Episode --* Season
+
+@enduml
