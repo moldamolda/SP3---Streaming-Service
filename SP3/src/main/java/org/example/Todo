@@ -1,5 +1,7 @@
 // Find ud af alt der har at gøre med vores lister. Hvordan ser strukturen ud?
 // forbind klasser
+//Kategori1,2,3.... Hvordan? need to have nice to have?
+// Benja spørger om en metode (static) TextUI-klassen er rigtig
+
 // add og remove-metoder til User-klassen - DONE
 //lav login - DONE
-//Kategori1,2,3.... Hvordan? need to have nice to have?
