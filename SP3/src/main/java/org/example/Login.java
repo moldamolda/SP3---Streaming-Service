@@ -31,7 +31,6 @@ public class Login {
 
         }
     }
-
     public void login() {
         String username = getUserInput("Enter your username: ");
         String password = getUserInput("Enter your username: ");
