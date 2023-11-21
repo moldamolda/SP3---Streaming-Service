@@ -5,9 +5,15 @@ import java.util.List;
 public class Streamingservice
 {
 
+<<<<<<< HEAD
     List<User>
     List<Movie>
     List<Serie>
+=======
+    List<user>
+    List<movies>
+    List<series>
+>>>>>>> StreamingtjenKami
 
     public void displayStartMenu()
     {
