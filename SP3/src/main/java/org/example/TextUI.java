@@ -1,5 +1,4 @@
-package main.java.org.example;
-import java.util.ArrayList;
+package org.example;
 
 public class TextUI extends FileIO{
 
@@ -22,9 +21,10 @@ public class TextUI extends FileIO{
 
     public void displayWatchedMovie(User user){
         User name = new User("","");
+
         System.out.println(name.getUserName() + "," + " These are the movies that you have watched:");
 
-        for(String s : user){
+        for(Movie s : user.getWatchMovieLaterList()){
             System.out.println(s);
         }
 
@@ -34,9 +34,10 @@ public class TextUI extends FileIO{
 
     public void displaySavedMovie(User user){
         User name = new User("","");
+
         System.out.println(name.getUserName()+ "," + " These are the movies you have saved for later viewing:");
 
-        for(String s : user){
+        for(Movie s : user.getWatchedMovieList()){
             System.out.println(s);
         }
 
@@ -46,9 +47,10 @@ public class TextUI extends FileIO{
 
     public void displayWatchedSeries(User user){
         User name = new User("","");
+
         System.out.println(name.getUserName()+ "," + " This is a list of shows that you have watched:");
 
-        for(String s : user){
+        for(Serie s : user.getWatchSerieList()){
             System.out.println(s);
         }
 
@@ -58,9 +60,10 @@ public class TextUI extends FileIO{
 
     public void displaySavedSeries(User user){
         User name = new User("","");
+
         System.out.println(name.getUserName()+ "," + " This is a list of shows you have saved for later viewing:");
 
-        for(String s : user){
+        for(Serie s : user.getWatchSerieLaterList()){
             System.out.println(s);
         }
 

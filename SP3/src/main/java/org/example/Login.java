@@ -1,4 +1,5 @@
-import java.io.File;
+package org.example;
+
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;

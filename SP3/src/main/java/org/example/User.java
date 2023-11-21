@@ -1,4 +1,4 @@
-package main.java.org.example;
+package org.example;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,7 +47,7 @@ public class User {
         }
     }
 
-    public void addToWatchSerieLaterList(Serie Serie){
+    public void addToWatchSerieLaterList(Serie serie){
         watchSerieLaterList.add(serie);
         System.out.println("Media has been added to your watch later list");
     }
@@ -86,6 +86,19 @@ public class User {
         this.passWord = passWord;
     }
 
+    public List<Movie> getWatchMovieLaterList(){
+       return watchMovieLaterList;
+    }
 
+    public List<Movie> getWatchedMovieList(){
+        return watchedMovieList;
+    }
 
+    public List<Serie> getWatchSerieLaterList(){
+        return watchSerieLaterList;
+    }
+
+    public List<Serie> getWatchSerieList(){
+        return watchedSerieList;
+    }
 }
