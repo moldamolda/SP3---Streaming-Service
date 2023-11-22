@@ -21,6 +21,7 @@ String category;
            System.out.println("4) Series by category ");
            int choice = Integer.parseInt(scanner.nextLine());
            switch (choice)
+
            {
                case 1:
                    TextUI.displayMovies();
