@@ -94,7 +94,7 @@ public class Login {
         try (FileWriter writer = new FileWriter(userfile, true)) {
             writer.write(username + " " + password + "\n");
         } catch (IOException e) {
-            System.out.println("couldnt save account");
+            System.out.println("couldn't save account");
         }
     }
 

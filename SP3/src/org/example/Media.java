@@ -35,11 +35,10 @@ public abstract class Media {
 
     @Override
     public String toString() {
-        return "Media{" +
-                "title='" + title + '\'' +
-                ", category='" + category + '\'' +
-                ", release='" + release + '\'' +
-                ", rating=" + rating +
-                '}';
+        return "Media: " +
+                "title: " + title +
+                ", category: " + category +
+                ", release: " + release +
+                ", rating: " + rating;
     }
 }

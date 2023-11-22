@@ -1,6 +1,6 @@
 package org.example;
 
-public class TextUI extends FileIO{
+public class TextUI extends org.example.FileIO {
 
     public void displayMessage(String msg){
         System.out.println(msg);
